@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCH Engineering | Construction With Integrity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">
+                    <img src="data:image/png;base64,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" alt="LOCH Engineering Logo" class="logo-img">
+                    <span>Loch Engineering</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Construction With <span>Integrity</span></h1>
+                <p><b>Building affordable housing solutions to meet your needs<br> Customer satisfaction is at the core of what we do here at Loch</p>
+                <div class="btn-container">
+                    <!-- <a href="#contact" class="btn">Get a Quote</a> -->
+                    <a href="#projects" class="btn btn-outline">Explore our Projects</a>
+                </div>
+            </div>
+            <img src="11.jpeg" alt="Modern Building" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card" a href="#arch">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Architectural Drawings</h3>
+                    <p>Professional 2D and 3D architectural designs tailored to your project requirements.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Cost Estimates</h3>
+                    <p>Accurate project cost estimation for both government and private contracts with detailed breakdowns.</p>
+                </div>
+                 <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Construction works</h3>
+                    <p>Specialized services for public and private sector construction projects and infrastructure.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Project Supervision</h3>
+                    <p>Complete project management from groundbreaking to final handover.</p>
+                </div>
+                <!-- <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Property Management</h3>
+                    <p>Comprehensive landlord services and tenant placement for optimal occupancy.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Affordable Housing</h3>
+                    <p>Cost-effective construction solutions to make housing accessible for everyone.</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="government">Government</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-item" data-category="residential">
+                    <img src="2.jpeg" alt="Residential Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3>Affordable Housing Complex</h3>
+                        <p>1-bedroom apartment residential unit completed in 2025</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="commercial">
+                    <img src="5.jpeg" alt="Commercial Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3>Commercial Office Building
+                        <p>1-story mixed-use development shops</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="government">
+                    <img src="10.jpeg" alt="Government Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3>Municipal Building Complex</h3>
+                        <p>National Identification Authority and National service Authority building for local government</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="residential">
+                    <img src="8.jpeg" alt="Residential Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3>Suburban Housing Estate</h3>
+                        <p>40 luxury apartment homes with community amenities</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="commercial">
+                    <img src="3.jpeg" alt="Commercial Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3>Islamic School Building Complex</h3>
+                        <p>Classrooms with staff offices, washrooms and conference halls</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="government">
+                    <img src="6.jpeg" alt="Government Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3>Public Housing Project</h3>
+                        <p>300-unit affordable housing for government initiative</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About LOCH Engineering</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="mission-vision">
+                        <div class="mv-card">
+                            <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                            <p>To ensure total quality management, ensuring value for money for our clients as well as applying modern technologies in service delivery; Ensuring energy efficient and environmentally friendly designs</p>
+                        </div>
+                        <div class="mv-card">
+                            <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                            <p>To be the lead sustainable building consultancy and construction provider in the World</p>
+                        </div>
+                    </div>
+                    <div class="values">
+                        <h3><i class="fas fa-star"></i> Core Values</h3>
+                        <ul>
+                            <li><strong>Integrity:</strong> Honesty and transparency in all our dealings</li>
+                            <li><strong>Quality:</strong> Uncompromising standards in construction</li>
+                            <li><strong>Innovation:</strong> Continuous improvement in techniques and materials</li>
+                            <li><strong>Affordability:</strong> Making housing accessible to all income levels</li>
+                            <li><strong>Sustainability:</strong> Environmentally responsible construction</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="1.jpeg" alt="Construction Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Organization Structure</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <p>"I love want we are building here at Loch, we are not just building projects, but individuals as well who poised to changing the African Narrative"</p>
+                        <div class="client-info">
+                            <img src="c1.jpeg" alt="Client">
+                            <div>
+                                <h4>Abdul Rauf Abubakr</h4>
+                                <span>CEO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Our maintenance team is responsive and professional. I'm glad to be here"</p>
+                        <div class="client-info">
+                            <img src="1d.jpeg" alt="Client">
+                            <div>
+                                <h4>Alhassan Alhassan</h4>
+                                <span>Deputy CEO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"I love inspecting projects and always make sure projects are 100% on point"</p>
+                        <div class="client-info">
+                            <img src="a1.jpeg" alt="Client">
+                            <div>
+                                <h4>Mahamudu Taufik</h4>
+                                <span>Quantity Surveyor and Site Superintendent</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"I make sure our data is up-to-date to bring you quality always"</p>
+                        <div class="client-info">
+                            <img src="h1.jpeg" alt="Client">
+                            <div>
+                                <h4>Bannor Hudson Basah</h4>
+                                <span>Web Dev & Deputy Site Superintendent</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Headquarters</h3>
+                            <p>Mile 9, Yilonaayili,  Tamale, Ghana</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>info@lochengineering.com</p>
+                            <p>louchengineering4@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p>+233 50 436 1474(Office)</p>
+                            <p>+233 55 883 8711(Projects)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Working Hours</h3>
+                            <p>Mon-Fri: 8:00 AM - 5:00 PM</p>
+                            <p>Sat: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="">Select Service</option>
+                                <option>Cost Estimates</option>
+                                <option>Architectural Drawings</option>
+                                <option>Project Supervision</option>
+                                <option>Property Management</option>
+                                <option>Government Contracts</option>
+                                <option>Other Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>LOCH Engineering</h3>
+                    <p>Construction With Integrity. Making housing affordable for All</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/19h8qJBtEr/?mibextid=wwXIfr" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="http://wa.me/233505112031" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/in/abubakar-abdul-rauf-b97684278?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/abdulraufabubakar69?igsh=ajRlbmx1dmNldjd5" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Architectural Drawings</a></li>
+                        <li><a href="#services">Cost Estimates</a></li>
+                        <li><a href="#services">Construction Works</a></li>
+                        <li><a href="#services">Project Supervision</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for project updates and construction insights.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 | Loch Engineering | HuBB Tec. | All Rights Reserved |</p>
+                <!-- <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
