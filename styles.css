@@ -597,9 +597,10 @@ section {
     color: var(--text-primary);
 }
 
-.contact-text p {
-    color: var(--text-secondary);
+.contact-text p a{
+    color: #008cff;
     margin-bottom: 0.3rem;
+    text-decoration: none;
 }
 
 .contact-form {
@@ -886,3 +887,4 @@ footer {
     animation: fadeIn 0.5s ease-in-out;
 
 }
+
